@@ -5,9 +5,11 @@ import { useNavigate } from 'react-router-dom'
 const Register = () => {
   const [formValues, setFormValues] = useState({
     name: '',
-    email: '',
+    username: '',
+    magicEmail: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    highAbility: false
   })
   let navigate = useNavigate()
 
@@ -19,16 +21,21 @@ const Register = () => {
     e.preventDefault()
     await RegisterUser({
       name: formValues.name,
-      email: formValues.email,
-      password: formValues.password
+      magicEmail: formValues.magicEmail,
+      password: formValues.password,
+      highAbility: formValues.highAbility
     })
     setFormValues({
       name: '',
-      email: '',
+      username: '',
+      magicEmail: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      highAbility: false
     })
-    navigate('/signin')
+    //High nobility redirect
+    //  (highAbility) ? navigate('/signin') : navigate('/redirectpeasant')
+
   }
 
   return (
@@ -41,23 +48,34 @@ const Register = () => {
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="John Smith"
+              placeholder=""
               value={formValues.name}
               required
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="username">Name</label>
             <input
               onChange={handleChange}
-              name="email"
-              type="email"
-              placeholder="example@example.com"
-              value={formValues.email}
+              name="name"
+              type="text"
+              placeholder=""
+              value={formValues.username}
               required
             />
           </div>
-
+          <div className="input-wrapper">
+            <label htmlFor="magicEmail">Magic Email</label>
+            <input
+              onChange={handleChange}
+              name="magicEmail"
+              type="email"
+              placeholder="example@example.com"
+              value={formValues.magicEmail}
+              required
+            />
+          </div>
+          {/* High Nobility Checkbock goes here */}
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
             <input

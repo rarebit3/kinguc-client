@@ -1,37 +1,98 @@
-import { useEffect, useState } from 'react'
-import { GetCastles } from '../services/PostServices'
+import { useState } from 'react'
+import { RegisterUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 
-const Feed = (user, authenticated) => {
-  let navigate = useNavigate()
-  const [castles, setCastles] = useState([])
-  
-  useEffect(() => {
-    const handleCastles = async () => {
-      const data = await GetCastles()
-      setCastles(data)
-    }
-    handleCastles()
-  }, [])
-  
-  return ( user && authenticated ) ? (
-    <div className="grid">
-      {castles.map((castle) => (
-        <div className="card" key={castle.id}>
-          <h3>{castle.name}</h3>
-          <div>
-            <img src={castle.image} alt="castle"/>
-          </div>
-        </div>
-      ))}
-    </div>
-  ) : (
-    <div className="protected">
-      <h3>Oops! You must be signed in to do that!</h3>
-      <button onClick={()=> navigate('/signin')}>Sign In</button>
-    </div>
 
+//lots of things to change
+const NewCastle = () => {
+  const [formValues, setFormValues] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  })
+  let navigate = useNavigate()
+
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    await RegisterUser({
+      name: formValues.name,
+      email: formValues.email,
+      password: formValues.password
+    })
+    setFormValues({
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    })
+    navigate('/castles')
+  }
+
+  return (
+    <div className="signin col">
+      <div className="card-overlay centered">
+        <form className="col" onSubmit={handleSubmit}>
+          <div className="input-wrapper">
+            <label htmlFor="name">Name</label>
+            <input
+              onChange={handleChange}
+              name="name"
+              type="text"
+              placeholder="John Smith"
+              value={formValues.name}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="email">Email</label>
+            <input
+              onChange={handleChange}
+              name="email"
+              type="email"
+              placeholder="example@example.com"
+              value={formValues.email}
+              required
+            />
+          </div>
+
+          <div className="input-wrapper">
+            <label htmlFor="password">Password</label>
+            <input
+              onChange={handleChange}
+              type="password"
+              name="password"
+              value={formValues.password}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <input
+              onChange={handleChange}
+              type="password"
+              name="confirmPassword"
+              value={formValues.confirmPassword}
+              required
+            />
+          </div>
+          <button
+            disabled={
+              !formValues.email ||
+              (!formValues.password &&
+                formValues.confirmPassword === formValues.password)
+            }
+          >
+            Sign In
+          </button>
+        </form>
+      </div>
+    </div>
   )
 }
 
-export default Feed
+export default NewCastle

@@ -19,6 +19,8 @@ const Castles = (user, authenticated) => {
       {castles.map((castle) => (
         <div className="card" key={castle.id}>
           <h3>{castle.name}</h3>
+          <h3>{castle.fortType}</h3>
+          <h3>{castle.servants}</h3>
           <div>
             <img src={castle.image} alt="castle"/>
           </div>
@@ -26,12 +28,18 @@ const Castles = (user, authenticated) => {
       ))}
     </div>
   ) : (
-    <div className="protected">
-      <h3>Oops! You must be signed in to do that!</h3>
-      <button onClick={()=> navigate('/signin')}>Sign In</button>
+    <div className="grid">
+      {castles.map((castle) => (
+        <div className="card" key={castle.id}>
+          <h3>{castle.name}</h3>
+          <h3>{castle.fortType}</h3>
+          <div>
+            <img src={castle.image} alt="castle"/>
+          </div>
+        </div>
+      ))}
     </div>
-
-  )
-}
+    )
+  }
 
 export default Castles
