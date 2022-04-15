@@ -1,11 +1,11 @@
-# Medieval Castle Site
+# Kingdom of the Universal Cluster
 
 ## Date: 4/14/2022
 ### By: Eloy Sauceda, Trevor Bond, David Wu
 ####  https://github.com/dwu621 | https://github.com/rarebit3 | https://github.com/eloysauceda4
 ***
 ### **Task**
-####  Our task is to build a full-stack (Postresql/Express/React/Node), professional-looking application with a functioning backend and frontend. Our website should allow users to interact with its pages and inform them about varies of castles and regions in reference to the cost of each castle.
+####  Our task is to build a full-stack (Postresql/Express/React/Node), professional-looking application with a functioning backend and frontend. Our website should allow users to interact with its pages and inform them about various castles and regions in a fictional world of refer their realtion to other data points.
 
 
 
@@ -15,7 +15,7 @@
  ***
 ### **Technologies Used**
 ## 1. React
-## 2. Postresql/Express
+## 2. Postrgesql/Express
 ## 3. Node
 
 
