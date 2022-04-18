@@ -7,11 +7,11 @@ const Regions = (user, authenticated) => {
   const [regions, setRegions] = useState([])
   
   useEffect(() => {
-    const handleCastles = async () => {
+    const handleRegions = async () => {
       const data = await GetRegions()
       setRegions(data)
     }
-    handleCastles()
+    handleRegions()
   }, [])
   
   return ( user && authenticated ) ? (
@@ -19,6 +19,9 @@ const Regions = (user, authenticated) => {
       {regions.map((region) => (
         <div className="card" key={region.id}>
           <h3>{region.name}</h3>
+          <h3>{region.population}</h3>
+          <h3>{region.numberOfNobles}</h3>
+          <h3>{region.capitalCity}</h3>
           <div>
             <img src={region.image} alt="castle"/>
           </div>

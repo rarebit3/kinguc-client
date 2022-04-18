@@ -9,6 +9,8 @@ const Register = () => {
     magicEmail: '',
     password: '',
     confirmPassword: '',
+  })
+  const [checkedOne, setCheckedOne] = useState({
     highAbility: false
   })
   let navigate = useNavigate()
@@ -17,13 +19,17 @@ const Register = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
+  const handleCheck = (e) => {
+    setCheckedOne(!checkedOne)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
       name: formValues.name,
       magicEmail: formValues.magicEmail,
       password: formValues.password,
-      highAbility: formValues.highAbility
+      highAbility: checkedOne.highAbility
     })
     setFormValues({
       name: '',
@@ -31,7 +37,9 @@ const Register = () => {
       magicEmail: '',
       password: '',
       confirmPassword: '',
-      highAbility: false
+    })
+    setCheckedOne({
+      highAbility: checkedOne.highAbility
     })
     //High nobility redirect
     //  (highAbility) ? navigate('/signin') : navigate('/redirectpeasant')
@@ -75,7 +83,15 @@ const Register = () => {
               required
             />
           </div>
-          {/* High Nobility Checkbock goes here */}
+          <div className="input-wrapper checkbox">
+            <label htmlFor="nobility">Nobility</label>
+            <input
+            type="checkbox"
+            name="nobilityToggle" 
+            onChange={handleCheck}
+            value={formValues.highAbility}
+            />
+          </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
             <input
