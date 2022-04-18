@@ -9,10 +9,9 @@ const Register = () => {
     magicEmail: '',
     password: '',
     confirmPassword: '',
+    checkedOne: false
   })
-  const [checkedOne, setCheckedOne] = useState({
-    highAbility: false
-  })
+
   let navigate = useNavigate()
 
   const handleChange = (e) => {
@@ -20,16 +19,19 @@ const Register = () => {
   }
 
   const handleCheck = (e) => {
-    setCheckedOne(!checkedOne)
+    setFormValues(!formValues.checkedOne)
+    console.log(formValues.checkedOne)
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (formValues.checkedOne === true) {
     await RegisterUser({
       name: formValues.name,
+      username: formValues.username,
       magicEmail: formValues.magicEmail,
       password: formValues.password,
-      highAbility: checkedOne.highAbility
+      checkedOne: false
     })
     setFormValues({
       name: '',
@@ -38,13 +40,12 @@ const Register = () => {
       password: '',
       confirmPassword: '',
     })
-    setCheckedOne({
-      highAbility: checkedOne.highAbility
-    })
-    //High nobility redirect
-    //  (highAbility) ? navigate('/signin') : navigate('/redirectpeasant')
+    navigate('/myinfo')
 
+  } else {
+    navigate('/redirectp')
   }
+}
 
   return (
     <div className="signin col">
@@ -62,10 +63,10 @@ const Register = () => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="username">Name</label>
+            <label htmlFor="username">Username</label>
             <input
               onChange={handleChange}
-              name="name"
+              name="username"
               type="text"
               placeholder=""
               value={formValues.username}
@@ -87,9 +88,9 @@ const Register = () => {
             <label htmlFor="nobility">Nobility</label>
             <input
             type="checkbox"
-            name="nobilityToggle" 
+            name="checkedOne" 
             onChange={handleCheck}
-            value={formValues.highAbility}
+            value={formValues.checkedOne}
             />
           </div>
           <div className="input-wrapper">
@@ -114,7 +115,7 @@ const Register = () => {
           </div>
           <button
             disabled={
-              !formValues.email ||
+              !formValues.magicEmail ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
             }

@@ -27,7 +27,7 @@ const SignIn = (props) => {
             <label htmlFor="magicEmail">Magic Email</label>
             <input
               onChange={handleChange}
-              name="magic email"
+              name="magicEmail"
               type="email"
               placeholder="example@example.com"
               value={formValues.magicEmail}
