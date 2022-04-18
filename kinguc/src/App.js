@@ -46,19 +46,25 @@ const App = () => {
           <Route path="/" element={<Home />} />
           
           <Route path="/signin" element={
+            <SignIn 
+            setUser={setUser}
+            toggleAuthenticated={toggleAuthenticated}
+            />}
+          />
           
-          <SignIn 
-          setUser={setUser}
-          toggleAuthenticated={toggleAuthenticated}
-          />} />
+          <Route path="/register" element={
+            <Register 
+            user={user} 
+            authenticated={authenticated}
+            />}
+          />
           
-          <Route path="/register" element={<Register />} />
-          
-          <Route path="/feed" element={
-          <Castles 
-          user={user} 
-          authenticated={authenticated}
-          />} />
+          <Route path="/castles" element={
+            <Castles 
+            user={user} 
+            authenticated={authenticated}
+            />}
+          />
         </Routes>
       </main>
     </div>
