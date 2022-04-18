@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GetRegions } from '../services/PostServices'
+import { GetRegions } from '../services/RegionService'
 import { useNavigate } from 'react-router-dom'
 
 const Regions = (user, authenticated) => {

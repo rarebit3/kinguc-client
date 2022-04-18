@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GetCastles } from '../services/PostServices'
+import { GetCastles } from '../services/CastleService'
 import { useNavigate } from 'react-router-dom'
 
 const Castles = (user, authenticated) => {
