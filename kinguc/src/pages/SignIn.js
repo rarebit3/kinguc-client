@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const SignIn = (props) => {
   let navigate = useNavigate()
-  const [formValues, setFormValues] = useState({ email: "", password: "" });
+  const [formValues, setFormValues] = useState({ magicEmail: "", password: "" });
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -13,10 +13,10 @@ const SignIn = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = await SignInUser(formValues);
-    setFormValues({ email: "", password: "" });
+    setFormValues({ magicEmail: "", password: "" });
     props.setUser(payload);
     props.toggleAuthenticated(true);
-    navigate("/feed");
+    navigate("/castles");
   };
 
   return (
@@ -24,13 +24,13 @@ const SignIn = (props) => {
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="magicEmail">Magic Email</label>
             <input
               onChange={handleChange}
-              name="email"
+              name="magic email"
               type="email"
               placeholder="example@example.com"
-              value={formValues.email}
+              value={formValues.magicEmail}
               required
             />
           </div>
@@ -44,7 +44,7 @@ const SignIn = (props) => {
               required
             />
           </div>
-          <button disabled={!formValues.email || !formValues.password}>
+          <button disabled={!formValues.magicEmail || !formValues.password}>
             Sign In
           </button>
         </form>
