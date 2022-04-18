@@ -11,17 +11,17 @@ const Register = () => {
     confirmPassword: '',
     checkedOne: false
   })
-
   let navigate = useNavigate()
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+      const value =
+        e.target.type === "checkbox" ? e.target.checked : e.target.value 
+    setFormValues({ ...formValues, 
+      [e.target.name]: value 
+      })
+      console.log(formValues)
   }
 
-  const handleCheck = (e) => {
-    setFormValues(!formValues.checkedOne)
-    console.log(formValues.checkedOne)
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -31,7 +31,7 @@ const Register = () => {
       username: formValues.username,
       magicEmail: formValues.magicEmail,
       password: formValues.password,
-      checkedOne: false
+      highAbility: true
     })
     setFormValues({
       name: '',
@@ -88,9 +88,9 @@ const Register = () => {
             <label htmlFor="nobility">Nobility</label>
             <input
             type="checkbox"
-            name="checkedOne" 
-            onChange={handleCheck}
-            value={formValues.checkedOne}
+            name="checkedOne"
+            checked={formValues.checkedOne} 
+            onChange={handleChange}
             />
           </div>
           <div className="input-wrapper">
