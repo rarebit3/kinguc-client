@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import { RegisterUser } from '../services/Auth'
+import { RegisterCastle } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
 
 
-//lots of things to change
+
 const NewCastle = () => {
   const [formValues, setFormValues] = useState({
     name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
+    fort: '',
+    servants: '',
+    income: '',
+    country: '',
+    image: ''
   })
   let navigate = useNavigate()
 
@@ -19,22 +21,27 @@ const NewCastle = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await RegisterUser({
+    await RegisterCastle({
       name: formValues.name,
-      email: formValues.email,
-      password: formValues.password
+      forTypes: formValues.fort,
+      servantCount: formValues.servants,
+      incomePerCastle: formValues.income,
+      country: formValues.country,
+      image: formValues.image
     })
     setFormValues({
       name: '',
-      email: '',
-      password: '',
-      confirmPassword: ''
+      fort: '',
+      servants: '',
+      income: '',
+      country: '',
+      image: ''
     })
     navigate('/castles')
   }
 
   return (
-    <div className="signin col">
+    <div className="newcastle col">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
@@ -49,45 +56,60 @@ const NewCastle = () => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="fort">Type of Fortification</label>
             <input
               onChange={handleChange}
-              name="email"
-              type="email"
-              placeholder="example@example.com"
-              value={formValues.email}
+              name="type"
+              type="text"
+              placeholder="Moat-and-Bailey"
+              value={formValues.fort}
               required
             />
           </div>
 
           <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="servants">Servant Count</label>
             <input
               onChange={handleChange}
-              type="password"
-              name="password"
-              value={formValues.password}
+              type="text"
+              name="servants"
+              placeholder='500'
+              value={formValues.servants}
               required
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="confirmPassword">Confirm Password</label>
+            <label htmlFor="income">Income per year</label>
             <input
               onChange={handleChange}
-              type="password"
-              name="confirmPassword"
-              value={formValues.confirmPassword}
+              type="text"
+              name="income"
+              placeholder='10000'
+              value={formValues.income}
               required
             />
           </div>
-          <button
-            disabled={
-              !formValues.email ||
-              (!formValues.password &&
-                formValues.confirmPassword === formValues.password)
-            }
-          >
-            Sign In
+          <div className="input-wrapper">
+            <label htmlFor="country">Country</label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="country"
+              value={formValues.country}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="image">Image</label>
+            <input
+              onChange={handleChange}
+              type="text"
+              name="image"
+              value={formValues.image}
+            />
+          </div>
+          <button>
+            Add Castle
           </button>
         </form>
       </div>

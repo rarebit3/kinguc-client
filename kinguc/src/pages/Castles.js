@@ -19,8 +19,10 @@ const Castles = (user, authenticated) => {
       {castles.map((castle) => (
         <div className="card" key={castle.id}>
           <h3>{castle.name}</h3>
-          <h3>{castle.fortType}</h3>
-          <h3>{castle.servants}</h3>
+          <h3>{castle.forType}</h3>
+          <h3>{castle.servantCount}</h3>
+          <h3>{castle.incomePerCastle}</h3>
+          <h3>{castle.region}</h3>
           <div>
             <img src={castle.image} alt="castle"/>
           </div>
@@ -32,7 +34,8 @@ const Castles = (user, authenticated) => {
       {castles.map((castle) => (
         <div className="card" key={castle.id}>
           <h3>{castle.name}</h3>
-          <h3>{castle.fortType}</h3>
+          <h3>{castle.forType}</h3>
+          <h3>{castle.region}</h3>
           <div>
             <img src={castle.image} alt="castle"/>
           </div>
