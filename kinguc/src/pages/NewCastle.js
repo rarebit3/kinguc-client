@@ -59,7 +59,7 @@ const NewCastle = () => {
             <label htmlFor="fort">Type of Fortification</label>
             <input
               onChange={handleChange}
-              name="type"
+              name="fort"
               type="text"
               placeholder="Moat-and-Bailey"
               value={formValues.fort}
