@@ -7,6 +7,7 @@ import SignIn from './pages/SignIn'
 import Castles from './pages/Castles'
 import Home from './pages/Home'
 import './styles/App.css'
+import TestSearch from './pages/TestSearch'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -64,6 +65,11 @@ const App = () => {
             user={user} 
             authenticated={authenticated}
             />}
+          />
+
+          <Route path='/search' element={
+            <TestSearch></TestSearch>
+          }
           />
         </Routes>
       </main>
