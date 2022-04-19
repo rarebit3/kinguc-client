@@ -8,6 +8,7 @@ import Castles from './pages/Castles'
 import Home from './pages/Home'
 import Regions from './pages/Regions'
 import UserInfo from './pages/UserInfo'
+import NewCastle from './pages/NewCastle'
 import './styles/App.css'
 import TestSearch from './pages/TestSearch'
 
@@ -64,6 +65,13 @@ const App = () => {
           
           <Route path="/castles" element={
             <Castles 
+            user={user} 
+            authenticated={authenticated}
+            />}
+          />
+
+          <Route path="/addcastle" element={
+            <NewCastle 
             user={user} 
             authenticated={authenticated}
             />}
