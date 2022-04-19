@@ -1,10 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AddCastle } from '../services/CastleService'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { GetUser } from '../services/UserService'
 
 
 
-const NewCastle = () => {
+
+const NewCastle = ({user, authenticated}) => {
+  const { id } = useParams()
+  const [userInfo, setUserInfo] = useState(null)
+
+  const handleUser = async () => {
+    let data = await GetUser(id)
+    setUserInfo(data)
+  }
+  useEffect(()=>{
+    handleUser()
+  }, [])
+
   const [formValues, setFormValues] = useState({
     name: '',
     fort: '',
@@ -27,7 +40,9 @@ const NewCastle = () => {
       servantCount: formValues.servants,
       incomePerCastle: formValues.income,
       country: formValues.country,
-      image: formValues.image
+      image: formValues.image,
+      userId: userInfo.id,
+      regionId: userInfo.ruler_of.id
     })
     setFormValues({
       name: '',

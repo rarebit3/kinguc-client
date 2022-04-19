@@ -70,7 +70,7 @@ const App = () => {
             />}
           />
 
-          <Route path="/addcastle" element={
+          <Route path="/addcastle/:id" element={
             <NewCastle 
             user={user} 
             authenticated={authenticated}

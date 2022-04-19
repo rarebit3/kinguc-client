@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { GetUser } from '../services/UserService.js'
 import { useNavigate } from 'react-router-dom'
 
-const UserInfo = (user, authenticated) => {
+const UserInfo = ({user, authenticated}) => {
   let navigate = useNavigate()
   const [userInfo, setUserInfo] = useState([])
 
