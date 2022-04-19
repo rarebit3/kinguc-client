@@ -9,7 +9,7 @@ const Search = (props) => {
         placeholder="Search Castles"
         onChange={props.onChange}
         />
-        <button type="submit" />
+        <button type="submit">Search</button>
       </form>
     )
 }

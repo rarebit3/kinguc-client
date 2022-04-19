@@ -6,6 +6,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
     authenticatedOptions = (
       <nav>
         <h3>Welcome {user.username}!</h3>
+        <Link to="/search">Search</Link>
         <Link to="/regions">Regions</Link>
         <Link to="/castles">Castles</Link>
         <Link 

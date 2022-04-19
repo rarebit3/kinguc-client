@@ -22,9 +22,29 @@ const TestSearch = () => {
     
     
     
+    
     return (
         <div>
             <Search onChange={handleChange} value={searchQuery} onSubmit={handleSubmit}/>
+            {searched && (
+            <div className="search">
+                <h2>Search Results</h2>
+                <section className="search-results container-grid">
+                    {searchResults.map((castle) => (
+                        <div className="card" key={castle.id}>
+                            <h3>{castle.name}</h3>
+                            <h3>{castle.forTypes}</h3>
+                            <h3>{castle.servantCount}</h3>
+                            <h3>{castle.incomePerCastle}</h3>
+                            <h3>{castle.location.name}</h3>
+                            <div>
+                                 <img src={castle.image} alt="castle"/>
+                            </div>
+                         </div>
+                    ))}
+                </section>
+            </div>
+            )}
         </div>
     )
 }
