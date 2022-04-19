@@ -25,10 +25,10 @@ const TestSearch = () => {
     
     return (
         <div>
-            <Search onChange={handleChange} value={searchQuery} onSubmit={handleSubmit}/>
+            <Search onChange={handleChange} value={searchQuery} onSubmit={handleSubmit} placeholder='Search Castles'/>
             {searched && (
             <div className="search">
-                <h2>Search Results</h2>
+                <h2>Showing {searchResults.length} {searchResults.length > 1 ? <span>Results</span> : <span>Result</span>}</h2>
                 <section className="search-results container-grid">
                     {searchResults.map((castle) => (
                         <div className="card" key={castle.id}>

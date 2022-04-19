@@ -6,9 +6,10 @@ const Search = (props) => {
         type="text"
         name="search"
         value={props.value}
-        placeholder="Search Castles"
+        placeholder={props.placeholder}
         onChange={props.onChange}
         />
+
         <button type="submit">Search</button>
       </form>
     )
