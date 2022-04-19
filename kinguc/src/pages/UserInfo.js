@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const UserInfo = (user, authenticated) => {
   let navigate = useNavigate()
   const [userInfo, setUserInfo] = useState([])
+
   
   
   return ( user && authenticated ) ? (
