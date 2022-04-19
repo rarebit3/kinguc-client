@@ -1,18 +1,11 @@
 import { useEffect, useState } from 'react'
-import { GetUser } from '../services/PostServices'
+import { GetUser } from '../services/UserService.js'
 import { useNavigate } from 'react-router-dom'
 
-const MyInfo = (user, authenticated) => {
+const UserInfo = (user, authenticated) => {
   let navigate = useNavigate()
-  const [myInfo, setMyInfo] = useState([])
+  const [userInfo, setUserInfo] = useState([])
   
-  useEffect(() => {
-    const handleUser = async () => {
-      const data = await GetUser()
-      setMyInfo(data)
-    }
-    handleUser()
-  }, [])
   
   return ( user && authenticated ) ? (
     <div className="grid">
@@ -29,4 +22,4 @@ const MyInfo = (user, authenticated) => {
 
   )
 }
-export default MyInfo
+export default UserInfo

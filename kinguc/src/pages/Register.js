@@ -40,7 +40,7 @@ const Register = () => {
       password: '',
       confirmPassword: '',
     })
-    navigate('/myinfo')
+    navigate('/userinfo')
 
   } else {
     navigate('/redirectp')

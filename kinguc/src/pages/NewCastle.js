@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { RegisterCastle } from '../services/Auth'
+import { AddCastle } from '../services/CastleService'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -21,7 +21,7 @@ const NewCastle = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await RegisterCastle({
+    await AddCastle({
       name: formValues.name,
       forTypes: formValues.fort,
       servantCount: formValues.servants,

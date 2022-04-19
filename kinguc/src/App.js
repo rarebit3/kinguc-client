@@ -6,6 +6,8 @@ import Register from './pages/Register'
 import SignIn from './pages/SignIn'
 import Castles from './pages/Castles'
 import Home from './pages/Home'
+import Regions from './pages/Regions'
+import UserInfo from './pages/UserInfo'
 import './styles/App.css'
 import TestSearch from './pages/TestSearch'
 
@@ -62,6 +64,20 @@ const App = () => {
           
           <Route path="/castles" element={
             <Castles 
+            user={user} 
+            authenticated={authenticated}
+            />}
+          />
+
+          <Route path="/regions" element={
+            <Regions 
+            user={user} 
+            authenticated={authenticated}
+            />}
+          />
+
+          <Route path="/userinfo" element={
+            <UserInfo 
             user={user} 
             authenticated={authenticated}
             />}
