@@ -7,8 +7,10 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       <nav>
         <h3>Welcome {user.username}!</h3>
         <Link to="/regions">Regions</Link>
-        <Link onClick={handleLogOut} to="/">
-          Sign Out
+        <Link to="/castles">Castles</Link>
+        <Link 
+        onClick={handleLogOut} to="/">
+        Sign Out
         </Link>
       </nav>
     )
