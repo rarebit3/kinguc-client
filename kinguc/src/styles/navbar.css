@@ -39,8 +39,22 @@ Link {
       align-items: flex-start;
       margin-right: auto ;
       flex: 50%;
+      image-rendering: auto;
+      
 
   }
+
+ .title {
+  text-decoration: none;
+  text-decoration-style: none;
+  display: flex;
+  text-transform: uppercase; 
+  font-weight: 800;
+  padding-top: 2%;
+  font-size: 10px;
+  margin: auto .5em;
+  color: black;
+ }
 
   nav a, nav h3 {
      text-decoration: none;

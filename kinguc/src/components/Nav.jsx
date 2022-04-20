@@ -34,12 +34,17 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
     <header>
       <Link to="/">
         <div className="logo-wrapper" alt="logo">
+          
           <img
             className="castlelogo"
             src="https://i.pinimg.com/736x/49/7a/36/497a3626cb2cdd528ac9a3e81fc6eef6.jpg"
             alt="welcome banner"
+            
           />
+          
+          
         </div>
+        <div className='title'>Kingdom of the Universal Cluster</div>
       </Link>
       {authenticated && user ? authenticatedOptions : publicOptions}
     </header>
