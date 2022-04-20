@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
+import "../styles/navbar.css"
 
 const Nav = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
   if (user) {
     authenticatedOptions = (
       <nav>
-        <h3>Welcome {user.username}!</h3>
+        <h3 className='navbar'>Welcome {user.username}!</h3>
 
         <Link to="/search">Search</Link>
         <Link to="/regions">Regions</Link>
@@ -21,7 +22,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   }
 
   const publicOptions = (
-    <nav>
+    <nav className='navbar'>
       <Link to="/">Home</Link>
       <Link to="/castles">Castles</Link>
       <Link to="/register">Register</Link>

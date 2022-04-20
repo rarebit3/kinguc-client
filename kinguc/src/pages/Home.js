@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div className="home-container col">
-      <img src="" alt="welcome"/>
+        <img src="" alt="welcome"/>  
 
       <section className="welcome-signin">
         <button onClick={() => navigate('/signin')}>
