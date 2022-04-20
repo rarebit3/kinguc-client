@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { GetCastles } from '../services/CastleService'
 import { useNavigate } from 'react-router-dom'
+import '../styles/castle.css'
 
 const Castles = ({user, authenticated}) => {
   let navigate = useNavigate()
@@ -24,7 +25,7 @@ const Castles = ({user, authenticated}) => {
           <h3>{castle.servantCount}</h3>
           <h3>{castle.incomePerCastle}</h3>
           <h3>{castle.location.name}</h3>
-          <div>
+          <div className='imagediv'>
             <img src={castle.image} alt="castle"/>
           </div>
         </div>
