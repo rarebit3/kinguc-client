@@ -30,7 +30,6 @@ const Regions = (user, authenticated) => {
       <h3>Oops! You must be signed in to do that!</h3>
       <button onClick={()=> navigate('/signin')}>Sign In</button>
     </div>
-
   )
 }
 

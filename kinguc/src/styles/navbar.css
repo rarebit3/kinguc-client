@@ -12,9 +12,9 @@ Link {
   }
  
   header {
-      font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
       font-size: 16px;
-    display: flex;
+      display: flex;
       margin-top: 25px;
       width: 100%;
       max-height: 3em;
