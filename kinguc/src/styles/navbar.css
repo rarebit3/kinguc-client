@@ -38,6 +38,7 @@ Link {
       justify-content: left;
       align-items: flex-start;
       margin-right: auto ;
+      flex: 50%;
 
   }
 
