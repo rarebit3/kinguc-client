@@ -23,7 +23,7 @@ const Castles = ({user, authenticated}) => {
           <h3>{castle.forTypes}</h3>
           <h3>{castle.servantCount}</h3>
           <h3>{castle.incomePerCastle}</h3>
-          <h3>{castle.location.name}</h3>
+          {/* <h3>{castle.location.name}</h3> */}
           <div>
             <img src={castle.image} alt="castle"/>
           </div>

@@ -1,0 +1,37 @@
+.welcome-signin {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: auto;
+    margin-top: 250px;
+}
+
+.castlehome {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: auto;
+    margin-top: 0px;
+    image-rendering: pixelated;
+    border-radius: 9px;
+    max-width: fit-content;
+    height: 450px;
+    padding: 10px;
+    image-rendering: auto;
+}
+.getstarted {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-variant: normal;
+    display: flex;
+    align-items: center;
+    display: flex;
+    margin-bottom: auto;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase; 
+    font-weight: 800;
+    margin: auto 1em;
+    color: black;
+   
+}
