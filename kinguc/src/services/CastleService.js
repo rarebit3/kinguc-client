@@ -27,3 +27,13 @@ export const AddCastle = async (data) => {
     throw error
   }
 }
+
+export const DeleteCastle = async (id) => {
+  try {
+    await Client.delete(`castles/delete/${id}`)
+    .then((res) => console.log(res, "deleted castle"))
+    .catch((error) => console.log(error))
+  } catch (err) {
+    throw err
+  }
+}

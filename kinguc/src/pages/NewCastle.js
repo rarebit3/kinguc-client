@@ -11,7 +11,8 @@ const NewCastle = () => {
     servants: '',
     income: '',
     country: '',
-    image: ''
+    image: '',
+    
   })
   let navigate = useNavigate()
 
