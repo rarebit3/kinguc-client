@@ -30,6 +30,15 @@ export const UpdatePassword = async (data, userId) => {
   }
 }
 
+export const DeleteUser = async (userId) => {
+  try {
+    const res = await Client.delete(`/auth/delete/${userId}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
 export const CheckSession = async () => {
   try {
     const res = await Client.get('/auth/session')

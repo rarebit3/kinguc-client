@@ -89,6 +89,7 @@ const App = () => {
             <UserInfo 
             user={user} 
             authenticated={authenticated}
+            handleLogOut={handleLogOut}
             />}
           />
 
