@@ -21,6 +21,15 @@ export const RegisterUser = async (data) => {
   }
 }
 
+export const UpdatePassword = async (data, userId) => {
+  try {
+    const res = await Client.put(`/auth/update/${userId}`, data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
 export const CheckSession = async () => {
   try {
     const res = await Client.get('/auth/session')
