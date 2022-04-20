@@ -56,7 +56,7 @@ const NewCastle = ({user, authenticated}) => {
     navigate('/castles')
   }
 
-  return (
+  return ( user && authenticated ) ? (
     <div className="form-box">
       <div className="card-overlay centered">
         <h5>{user.username} is adding a castle to their collection...</h5>
@@ -132,6 +132,11 @@ const NewCastle = ({user, authenticated}) => {
           </button>
         </form>
       </div>
+    </div>
+  ) : (
+    <div className="protected">
+      <h3>Oops! You must be signed in as a Noble to add a castle! Please see your local leige if you wish to become a peer of the realm.</h3>
+      <button onClick={()=> navigate('/signin')}>Sign In</button>
     </div>
   )
 }

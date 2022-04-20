@@ -58,7 +58,7 @@ const Register = () => {
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder=""
+              placeholder="Lord John Doe of the Southern Reach"
               value={formValues.name}
               required
             />
@@ -69,7 +69,7 @@ const Register = () => {
               onChange={handleChange}
               name="username"
               type="text"
-              placeholder=""
+              placeholder="JDoe123"
               value={formValues.username}
               required
             />
@@ -83,15 +83,6 @@ const Register = () => {
               placeholder="example@example.com"
               value={formValues.magicEmail}
               required
-            />
-          </div>
-          <div className="input-wrapper checkbox">
-            <label className='title' htmlFor="nobility">Nobility</label>
-            <input
-            type="checkbox"
-            name="checkedOne"
-            checked={formValues.checkedOne} 
-            onChange={handleChange}
             />
           </div>
           <div className="input-wrapper">
@@ -112,6 +103,15 @@ const Register = () => {
               name="confirmPassword"
               value={formValues.confirmPassword}
               required
+            />
+          </div>
+          <div className="input-wrapper checkbox">
+            <label className='title' htmlFor="nobility">Are you a Noble?</label>
+            <input
+            type="checkbox"
+            name="checkedOne"
+            checked={formValues.checkedOne} 
+            onChange={handleChange}
             />
           </div>
           <button
