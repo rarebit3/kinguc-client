@@ -24,7 +24,8 @@ const NewCastle = ({user, authenticated}) => {
     servants: '',
     income: '',
     country: '',
-    image: ''
+    image: '',
+    
   })
   let navigate = useNavigate()
 
