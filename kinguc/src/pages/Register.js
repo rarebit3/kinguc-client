@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { RegisterUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
+import '../styles/forms.css'
 
 const Register = () => {
   const [formValues, setFormValues] = useState({
@@ -48,11 +49,11 @@ const Register = () => {
 }
 
   return (
-    <div className="signin col">
+    <div className="form-box">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
+            <label className='title' htmlFor="name">Name</label>
             <input
               onChange={handleChange}
               name="name"
@@ -63,7 +64,7 @@ const Register = () => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="username">Username</label>
+            <label className='title' htmlFor="username">Username</label>
             <input
               onChange={handleChange}
               name="username"
@@ -74,7 +75,7 @@ const Register = () => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="magicEmail">Magic Email</label>
+            <label className='title' htmlFor="magicEmail">Magic Email</label>
             <input
               onChange={handleChange}
               name="magicEmail"
@@ -85,7 +86,7 @@ const Register = () => {
             />
           </div>
           <div className="input-wrapper checkbox">
-            <label htmlFor="nobility">Nobility</label>
+            <label className='title' htmlFor="nobility">Nobility</label>
             <input
             type="checkbox"
             name="checkedOne"
@@ -94,7 +95,7 @@ const Register = () => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
+            <label className='title' htmlFor="password">Password</label>
             <input
               onChange={handleChange}
               type="password"
@@ -104,7 +105,7 @@ const Register = () => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="confirmPassword">Confirm Password</label>
+            <label className='title' htmlFor="confirmPassword">Confirm Password</label>
             <input
               onChange={handleChange}
               type="password"

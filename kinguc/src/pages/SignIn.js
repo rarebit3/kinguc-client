@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SignInUser } from "../services/Auth";
 import { useNavigate } from "react-router-dom";
+import '../styles/forms.css'
 
 const SignIn = (props) => {
   let navigate = useNavigate()
@@ -20,7 +21,7 @@ const SignIn = (props) => {
   };
 
   return (
-    <div className="signin col">
+    <div className="form-box">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
