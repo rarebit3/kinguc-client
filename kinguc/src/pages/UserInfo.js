@@ -13,7 +13,8 @@ const UserInfo = ({user, authenticated}) => {
         <div className="card" key={user.id}>
           <h3>{user.name}</h3>
           <h3>{user.magicEmail}</h3>
-          </div>
+        </div>
+        <button onClick={()=> navigate(`/userinfo/editpassword/${user.id}`)}>Change Password</button>
     </div>
   ) : (
     <div className="protected">

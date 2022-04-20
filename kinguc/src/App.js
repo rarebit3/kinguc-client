@@ -11,6 +11,7 @@ import UserInfo from './pages/UserInfo'
 import NewCastle from './pages/NewCastle'
 import './styles/App.css'
 import TestSearch from './pages/TestSearch'
+import ChangePassword from './pages/ChangePassword'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -92,9 +93,20 @@ const App = () => {
           />
 
           <Route path='/search' element={
-            <TestSearch></TestSearch>
-          }
+            <TestSearch
+            user={user} 
+            authenticated={authenticated}
+            />}
           />
+
+          <Route path='/userinfo/editpassword/:id' element={
+            <ChangePassword
+            user={user} 
+            authenticated={authenticated}
+            handleLogOut={handleLogOut}
+            />}
+          />
+
         </Routes>
       </main>
     </div>
