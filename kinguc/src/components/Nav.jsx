@@ -35,8 +35,8 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       <Link to="/">
         <div className="logo-wrapper" alt="logo">
           <img
-            className="logo"
-            src=""
+            className="castlelogo"
+            src="https://i.pinimg.com/736x/49/7a/36/497a3626cb2cdd528ac9a3e81fc6eef6.jpg"
             alt="welcome banner"
           />
         </div>
