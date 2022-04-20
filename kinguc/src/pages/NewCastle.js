@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { AddCastle } from '../services/CastleService'
 import { useNavigate, useParams } from 'react-router-dom'
 import { GetUser } from '../services/UserService'
-
+import '../styles/forms.css'
 
 
 
@@ -57,22 +57,23 @@ const NewCastle = ({user, authenticated}) => {
   }
 
   return (
-    <div className="newcastle col">
+    <div className="form-box">
       <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
+        <h5>{user.username} is adding a castle to their collection...</h5>
+        <form className="form" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
+            <label className='title' htmlFor="name">Name</label>
             <input
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="John Smith"
+              placeholder="The Bastille"
               value={formValues.name}
               required
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="fort">Type of Fortification</label>
+            <label className='title' htmlFor="fort">Type of Fortification</label>
             <input
               onChange={handleChange}
               name="fort"
@@ -84,7 +85,7 @@ const NewCastle = ({user, authenticated}) => {
           </div>
 
           <div className="input-wrapper">
-            <label htmlFor="servants">Servant Count</label>
+            <label className='title' htmlFor="servants">Servant Count</label>
             <input
               onChange={handleChange}
               type="text"
@@ -95,7 +96,7 @@ const NewCastle = ({user, authenticated}) => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="income">Income per year</label>
+            <label className='title' htmlFor="income">Income (per year)</label>
             <input
               onChange={handleChange}
               type="text"
@@ -106,26 +107,28 @@ const NewCastle = ({user, authenticated}) => {
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="country">Country</label>
+            <label className='title' htmlFor="country">Country</label>
             <input
               onChange={handleChange}
               type="text"
               name="country"
+              placeholder="USA"
               value={formValues.country}
               required
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="image">Image</label>
+            <label className='title' htmlFor="image">Image</label>
             <input
               onChange={handleChange}
-              type="text"
+              type="file"
               name="image"
+              placeholder="image url"
               value={formValues.image}
             />
           </div>
-          <button>
-            Add Castle
+          <button className="button">
+            Submit Castle
           </button>
         </form>
       </div>
