@@ -39,6 +39,15 @@ export const DeleteUser = async (userId) => {
   }
 }
 
+export const UpdateProfile = async (data, userId) => {
+  try {
+    const res = await Client.put(`/auth/update/profile/${userId}`, data)
+    return res.data
+  } catch (error) {
+    
+  }
+}
+
 export const CheckSession = async () => {
   try {
     const res = await Client.get('/auth/session')
