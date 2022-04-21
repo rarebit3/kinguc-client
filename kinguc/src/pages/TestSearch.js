@@ -1,6 +1,8 @@
 import Search from "../components/Search"
 import { useState } from "react"
 import { SearchCastles } from "../services/CastleService"
+import "../styles/search.css"
+
 
 const TestSearch = () => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -24,12 +26,12 @@ const TestSearch = () => {
     
     
     return (
-        <div>
+        <div className="searchbar">
             <Search onChange={handleChange} value={searchQuery} onSubmit={handleSubmit} placeholder='Search Castles'/>
             {searched && (
             <div className="search">
                 <h2>Showing {searchResults.length} {searchResults.length > 1 ? <span>Results</span> : <span>Result</span>}</h2>
-                <section className="search-results container-grid">
+                <section className="search-results">
                     {searchResults.map((castle) => (
                         <div className="card" key={castle.id}>
                             <h3>{castle.name}</h3>
