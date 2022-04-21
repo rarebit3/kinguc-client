@@ -18,10 +18,10 @@ const Regions = (user, authenticated) => {
     <div className="grid">
       {regions.map((region) => (
         <div className="card" key={region.id}>
-          <h3>{region.name}</h3>
-          <h3>{region.population}</h3>
-          <h3>{region.numberOfNobles}</h3>
-          <h3>{region.capitalCity}</h3>
+          <h3>Name: {region.name}</h3>
+          <h3>Population: {region.population}</h3>
+          <h3>Number of Nobles:{region.numberOfNobles}</h3>
+          <h3>Capital:{region.capitalCity}</h3>
         </div>
       ))}
     </div>

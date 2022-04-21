@@ -23,10 +23,10 @@ const Castles = ({ user, authenticated }) => {
       <div className="grid">
         {castles.map((castle) => (
           <div className="card" key={castle.id}>
-            <h3>{castle.name}</h3>
-            <h3>{castle.forTypes}</h3>
-            <h3>{castle.servantCount}</h3>
-            <h3>{castle.incomePerCastle}</h3>
+            <h3>Name: {castle.name}</h3>
+            <h3>Type: {castle.forTypes}</h3>
+            <h3>Servant Count: {castle.servantCount}</h3>
+            <h3>Income: {castle.incomePerCastle}</h3>
 
             <h3>{castle.location.name}</h3>
             <div className="imagediv">
