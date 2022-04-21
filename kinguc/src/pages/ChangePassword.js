@@ -16,27 +16,25 @@ const ChangePassword = ({user, authenticated, handleLogOut}) => {
         setFormValues({ ...formValues, 
             [e.target.name]: e.target.value 
             })
-            // console.log(formValues)
     }
 
     const handleSubmit = async (e, userId) => {
         e.preventDefault()
         await UpdatePassword(formValues, userId)
-        console.log(userId)
-        console.log(formValues)
         setFormValues({
             currentPassword: '',
             newPassword: '',
             confirmNewPassword: '',
         })
         await handleLogOut()
+        alert(`You've successully updated your password!\n Please sign in again.`)
         navigate('/signin')
 
     }
     
 
     return ( user && authenticated ) ? (
-        <div className="change-password col">
+        <div className="form-box">
             <div className="card-overlay centered">
                 <form className="col" onSubmit={(e)=> handleSubmit(e, user.id)}>
                     <div className="input-wrapper">
