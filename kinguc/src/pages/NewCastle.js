@@ -121,7 +121,7 @@ const NewCastle = ({user, authenticated}) => {
             <label className='title' htmlFor="image">Image</label>
             <input
               onChange={handleChange}
-              type="file"
+              type="link"
               name="image"
               placeholder="image url"
               value={formValues.image}

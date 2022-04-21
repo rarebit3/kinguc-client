@@ -43,3 +43,7 @@
     transition: all 0.2s ease-out;
     /* add hover change */
   }
+
+.checkbox {
+    float: left;
+  }

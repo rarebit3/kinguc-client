@@ -9,10 +9,12 @@ import Home from './pages/Home'
 import Regions from './pages/Regions'
 import UserInfo from './pages/UserInfo'
 import NewCastle from './pages/NewCastle'
-import './styles/App.css'
 import TestSearch from './pages/TestSearch'
 import ChangePassword from './pages/ChangePassword'
 import EditProfile from './pages/EditProfile'
+import RedirectPeasant from './pages/RedirectPeasant'
+import './styles/App.css'
+
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -109,6 +111,7 @@ const App = () => {
             />}
           />
 
+
           <Route path='/userinfo/update/:id' element={
             <EditProfile
             user={user}
@@ -116,6 +119,12 @@ const App = () => {
             handleLogOut={handleLogOut}
           />}
           />
+
+
+          <Route path='redirectp' element={
+            <RedirectPeasant/>
+          }
+        />
 
         </Routes>
       </main>
