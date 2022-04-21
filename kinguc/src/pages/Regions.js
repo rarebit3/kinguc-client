@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { GetRegions } from '../services/RegionService'
 import { useNavigate } from 'react-router-dom'
 
-const Regions = (user, authenticated) => {
+const Regions = ({user, authenticated}) => {
   let navigate = useNavigate()
   const [regions, setRegions] = useState([])
   

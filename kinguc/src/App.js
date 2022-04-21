@@ -9,9 +9,10 @@ import Home from './pages/Home'
 import Regions from './pages/Regions'
 import UserInfo from './pages/UserInfo'
 import NewCastle from './pages/NewCastle'
-import './styles/App.css'
 import TestSearch from './pages/TestSearch'
 import ChangePassword from './pages/ChangePassword'
+import RedirectPeasant from './pages/RedirectPeasant'
+import './styles/App.css'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -108,6 +109,10 @@ const App = () => {
             />}
           />
 
+          <Route path='redirectp' element={
+            <RedirectPeasant/>
+          }
+        />
         </Routes>
       </main>
     </div>

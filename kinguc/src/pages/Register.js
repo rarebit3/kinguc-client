@@ -114,7 +114,7 @@ const Register = () => {
             onChange={handleChange}
             />
           </div>
-          <button
+          <button className='submit-form'
             disabled={
               !formValues.magicEmail ||
               (!formValues.password &&
