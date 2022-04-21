@@ -14,3 +14,18 @@
  
        
 }
+.searchcastle {
+    image-rendering: crisp-edges;
+    border-radius: 5%;
+    justify-content: center;
+    size: 10px;
+      border-radius: 8px;
+      max-width: 75%;
+      display: flex;
+     
+     
+      margin-right: 20% ;
+      flex: 50%;
+      image-rendering: auto;
+}
+
