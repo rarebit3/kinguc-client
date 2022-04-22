@@ -16,6 +16,7 @@ const NewCastle = ({user, authenticated}) => {
   }
   useEffect(()=>{
     handleUser()
+    // eslint-disable-next-line
   }, [])
 
   const [formValues, setFormValues] = useState({
