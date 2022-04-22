@@ -9,7 +9,7 @@ Link {
   nav {
     flex: 50%;
     display: flex;
-    justify-content: right;
+    justify-content: left;
     padding-right: 50px;
     align-items: center;
   }

@@ -29,11 +29,10 @@
 }
 
 .button {
+    float: right;
+    text-align: center;
     text-decoration: none;
-    padding: 0.5rem 1rem;
     border-radius: .3em;
-    margin: 1em;
-    padding: .8em;
     cursor: pointer;
     border-bottom: 3px solid ;
 }

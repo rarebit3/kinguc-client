@@ -17,9 +17,6 @@ const Castles = ({ user, authenticated }) => {
 
   return user && authenticated ? (
     <div className="pagediv">
-      <button onClick={() => navigate(`/addcastle/${user.id}`)}>
-        Add a Castle
-      </button>
       <div className="grid">
         {castles.map((castle) => (
           <div className="card" key={castle.id}>
@@ -37,8 +34,7 @@ const Castles = ({ user, authenticated }) => {
       </div>
       <button
         className="button"
-        onClick={() => navigate(`/addcastle/${user.id}`)}
-      >
+        onClick={() => navigate(`/addcastle/${user.id}`)}>
         Add a Castle
       </button>
     </div>

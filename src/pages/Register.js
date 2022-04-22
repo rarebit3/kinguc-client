@@ -114,14 +114,14 @@ const Register = () => {
             onChange={handleChange}
             />
           </div>
-          <button className='submit-form'
+          <button className='button'
             disabled={
               !formValues.magicEmail ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
             }
           >
-            Sign In
+            Submit
           </button>
         </form>
       </div>
