@@ -41,7 +41,8 @@ const Castles = ({ user, authenticated }) => {
             <div className="imagediv">
               <img src={castle.image} alt="castle" />
             </div>
-            <button onClick={(e) => handleDemolish(e, castle.id)}>Demolish Castle</button>
+            <button onClick={() => navigate(`/revamp/castle/${castle.id}`)}>Revamp</button>
+            <button onClick={(e) => handleDemolish(e, castle.id)}>Demolish</button>
           </div>
         ))}
       </div>

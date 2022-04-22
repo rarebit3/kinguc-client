@@ -9,6 +9,15 @@ export const GetCastles = async () => {
   }
 }
 
+export const GetCastle = async (id) => {
+  try {
+    const res = await Client.get(`api/castle/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
 export const SearchCastles = async (searchQuery) => {
   try {
     const res = await Client.get(`api/castle/search?keyword=${searchQuery}`)
@@ -31,6 +40,15 @@ export const AddCastle = async (data) => {
 export const DemolishCastle = async (id) => {
   try {
     const res = await Client.delete(`api/castle/${id}`)
+    return res.data
+  } catch (err) {
+    throw err
+  }
+}
+
+export const UpdateCastle = async (data, id) => {
+  try {
+    const res = await Client.put(`api/castle/${id}`, data)
     return res.data
   } catch (err) {
     throw err
