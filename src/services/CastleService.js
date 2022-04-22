@@ -28,11 +28,10 @@ export const AddCastle = async (data) => {
   }
 }
 
-export const DeleteCastle = async (id) => {
+export const DemolishCastle = async (id) => {
   try {
-    await Client.delete(`castles/delete/${id}`)
-    .then((res) => console.log(res, "deleted castle"))
-    .catch((error) => console.log(error))
+    const res = await Client.delete(`api/castle/${id}`)
+    return res.data
   } catch (err) {
     throw err
   }
