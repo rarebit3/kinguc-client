@@ -14,6 +14,7 @@ import ChangePassword from './pages/ChangePassword'
 import EditProfile from './pages/EditProfile'
 import RedirectPeasant from './pages/RedirectPeasant'
 import './styles/App.css'
+import RevampCastle from './pages/RevampCastle'
 
 
 const App = () => {
@@ -76,6 +77,13 @@ const App = () => {
 
           <Route path="/addcastle/:id" element={
             <NewCastle 
+            user={user} 
+            authenticated={authenticated}
+            />}
+          />
+          
+          <Route path='/revamp/castle/:id' element={
+            <RevampCastle
             user={user} 
             authenticated={authenticated}
             />}

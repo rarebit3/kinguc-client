@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GetCastles } from "../services/CastleService";
+import { DemolishCastle, GetCastles } from "../services/CastleService";
 import { useNavigate } from "react-router-dom";
 import "../styles/castle.css";
 
@@ -7,13 +7,22 @@ const Castles = ({ user, authenticated }) => {
   let navigate = useNavigate();
   const [castles, setCastles] = useState([]);
 
+  const handleCastles = async () => {
+    const data = await GetCastles()
+    setCastles(data);
+  }
+
+  const handleDemolish = async (e, castleId) => {
+    e.preventDefault()
+    if(window.confirm('Are you sure you want to demolish this castle?\nClick OK to confrim.')) {
+      await DemolishCastle(castleId)
+      await handleCastles()
+    }
+  }
+
   useEffect(() => {
-    const handleCastles = async () => {
-      const data = await GetCastles();
-      setCastles(data);
-    };
-    handleCastles();
-  }, []);
+    handleCastles()
+  }, [])
 
   return user && authenticated ? (
     <div className="pagediv">
@@ -29,6 +38,8 @@ const Castles = ({ user, authenticated }) => {
             <div className="imagediv">
               <img src={castle.image} alt="castle" />
             </div>
+            <button onClick={() => navigate(`/revamp/castle/${castle.id}`)}>Revamp</button>
+            <button onClick={(e) => handleDemolish(e, castle.id)}>Demolish</button>
           </div>
         ))}
       </div>

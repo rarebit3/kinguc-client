@@ -5,3 +5,7 @@
     padding: 0;
     font-family: 'Times New Roman', Times, serif;
 }
+
+body {
+    background-color: rgb(214, 204, 169);
+}

@@ -27,6 +27,7 @@ const EditProfile = ({user, authenticated, handleLogOut}) => {
 
     useEffect(()=> {
         handleUserInfo()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     

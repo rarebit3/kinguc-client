@@ -7,14 +7,11 @@ const UserInfo = ({user, authenticated, handleLogOut}) => {
   const handleDelete = async (e, userId) => {
     e.preventDefault()
     if(window.confirm('Are you sure you want to delete your account?\nOnce you delete it, it cannot be undone.\nClick OK to Delete.')) {
-      console.log('delete')
       await DeleteUser(userId)
       alert('Your account has been successfully deleted!')
       await handleLogOut()
       navigate('/signin')
-    } else {
-      console.log('did not delete')
-    }
+    } 
   }
   
   
