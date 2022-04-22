@@ -41,7 +41,7 @@ const Register = () => {
       password: '',
       confirmPassword: '',
     })
-    navigate('/userinfo')
+    navigate('/signin')
 
   } else {
     navigate('/redirectp')
