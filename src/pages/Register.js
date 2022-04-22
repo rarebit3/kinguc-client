@@ -112,6 +112,7 @@ const Register = () => {
             name="checkedOne"
             checked={formValues.checkedOne} 
             onChange={handleChange}
+            validationmessage='Just making sure you are not a filthy peasant' 
             />
           </div>
           <button className='button'

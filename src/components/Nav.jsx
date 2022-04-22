@@ -11,7 +11,6 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
         <Link to="/search">Search</Link>
         <Link to="/regions">Regions</Link>
         <Link to="/castles">Castles</Link>
-        <Link to="/regions">Regions</Link>
         <Link to={`/userinfo/${user.id}`}>User Details</Link>
         <Link 
         onClick={handleLogOut} to="/">

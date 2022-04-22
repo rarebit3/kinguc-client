@@ -45,9 +45,15 @@ const SignIn = (props) => {
               required
             />
           </div>
-          <button disabled={!formValues.magicEmail || !formValues.password}>
+          <button
+          className="button" 
+          onClick={()=>navigate('/register')} >Register Here</button>
+          <button 
+          className="button" 
+          disabled={!formValues.magicEmail || !formValues.password}>
             Sign In
           </button>
+
         </form>
       </div>
     </div>
